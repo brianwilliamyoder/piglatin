@@ -23,3 +23,27 @@ Expected Output: "quares";
 Test: "It will concatenate "-ay" to the end of strings that contain initial consonants."
 Code: pigLatin("shift");
 Expected Output: "iftshay";
+
+
+
+
+
+
+Basma's Code
+
+function pigLatin(word) {
+  word=word.toLowerCase();
+
+  for (let i = 0; i<word.length; i++){
+    vowelArray = ["a", "e", "i", "o", "u"];
+    if (vowelArray.indexOf(word[i]) > -1){
+      word=word+"way";
+      break;
+    }else{
+        let consonant = word.slice(0, i);
+        let leftOver = word.slice(i, word.length);
+        word = leftOver+consonant+"ay";
+        break;}
+      }
+  return word;
+}
